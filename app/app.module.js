@@ -16,14 +16,16 @@ var data_service_1 = require('./shared/data.service');
 var peoplePet_component_1 = require('./people/peoplePet.component');
 var calc_component_1 = require('./calculator/calc.component');
 var banner_component_1 = require('./calculator/banner.component');
+var luckyNumber_component_1 = require('./simple_service/luckyNumber.component');
+var luckyNumber_service_1 = require('./simple_service/luckyNumber.service');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, http_1.HttpModule, http_1.JsonpModule],
-            declarations: [app_component_1.AppComponent, peoplePet_component_1.PeoplePet, calc_component_1.Calculator, banner_component_1.Banner],
-            providers: [data_service_1.DataService],
+            declarations: [luckyNumber_component_1.LuckyNumber, app_component_1.AppComponent, peoplePet_component_1.PeoplePet, calc_component_1.Calculator, banner_component_1.Banner],
+            providers: [data_service_1.DataService, luckyNumber_service_1.LuckyNumberService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

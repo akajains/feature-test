@@ -3,7 +3,7 @@ var testing_1 = require('@angular/core/testing');
 var calc_component_1 = require('./calc.component');
 var banner_component_1 = require('./banner.component');
 var fixture, app;
-describe('Calculator Component', function () {
+xdescribe('Calculator Component', function () {
     //Setup TestBed
     beforeEach(function () {
         testing_1.TestBed.configureTestingModule({

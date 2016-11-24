@@ -10,7 +10,7 @@ import {
 } from './banner.component'
 
 let fixture, app;
-describe ('Calculator Component',() =>{
+xdescribe ('Calculator Component',() =>{
     
     //Setup TestBed
     beforeEach(()=>

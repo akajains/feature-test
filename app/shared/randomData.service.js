@@ -12,28 +12,28 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/map');
 require('rxjs/add/operator/catch');
-var RandomData = (function () {
-    function RandomData(http) {
+var RandomDataService = (function () {
+    function RandomDataService(http) {
         this.http = http;
         this.dataUrl = "https://jsonplaceholder.typicode.com/posts";
     }
-    RandomData.prototype.ngOnInit = function () {
+    RandomDataService.prototype.ngOnInit = function () {
         //call remote service
     };
-    RandomData.prototype.getData = function () {
+    RandomDataService.prototype.getData = function () {
         return this.http.get(this.dataUrl)
-            .map(function (data) { return data.json(); });
+            .map(function (data) { return data; });
         // .catch(this.handleError);
     };
-    RandomData.prototype.handleError = function (error) {
+    RandomDataService.prototype.handleError = function (error) {
         return true;
         //return Observable.throw(error.json().error || 'Server error');
     };
-    RandomData = __decorate([
+    RandomDataService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], RandomData);
-    return RandomData;
+    ], RandomDataService);
+    return RandomDataService;
 }());
-exports.RandomData = RandomData;
+exports.RandomDataService = RandomDataService;
 //# sourceMappingURL=randomData.service.js.map

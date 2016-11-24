@@ -9,17 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var LuckyNumberService = (function () {
+    function LuckyNumberService() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'agl-test',
-            template: "\n    <!--<div><people-pet></people-pet></div>\n     <div><ng-calc></ng-calc></div> -->\n     <div><ng-lucky-number></ng-lucky-number>\n  "
-        }), 
+    LuckyNumberService.prototype.getLuckyNumber = function () {
+        return Math.random();
+    };
+    LuckyNumberService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], LuckyNumberService);
+    return LuckyNumberService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.LuckyNumberService = LuckyNumberService;
+//# sourceMappingURL=luckyNumber.service.js.map

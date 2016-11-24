@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 @Injectable()
-export class RandomData implements OnInit{
+export class RandomDataService implements OnInit{
 
     private dataUrl: string = "https://jsonplaceholder.typicode.com/posts";
     constructor(private http:Http){}
@@ -17,7 +17,7 @@ export class RandomData implements OnInit{
     
     getData(): Observable<any>{
        return  this.http.get(this.dataUrl)
-        .map((data: Response) => <any> data.json())
+        .map((data: Response) => <any> data)
        // .catch(this.handleError);
     }
 

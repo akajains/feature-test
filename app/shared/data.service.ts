@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Directive } from '@angular/core';
 import {  Response,Jsonp } from '@angular/http';
 
 import { Observable } from 'rxjs/Rx';

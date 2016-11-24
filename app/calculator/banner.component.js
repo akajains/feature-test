@@ -13,19 +13,26 @@ var core_1 = require('@angular/core');
 var randomData_service_1 = require('../shared/randomData.service');
 var Banner = (function () {
     function Banner(randomData) {
-        var _this = this;
         this.randomData = randomData;
-        this.randomData.getData()
-            .subscribe(function (data) { return _this.title = "Incoming data " + data.toString(); });
     }
     ;
+    Banner.prototype.loadData = function (data) {
+        this.title = data.toString();
+        this.resultData = data.json();
+        this.totalCount = data.json().length;
+    };
+    Banner.prototype.ngOnInit = function () {
+        var _this = this;
+        this.randomData.getData()
+            .subscribe(function (data) { return _this.loadData(data); });
+    };
     Banner = __decorate([
         core_1.Component({
-            providers: [randomData_service_1.RandomData],
+            providers: [randomData_service_1.RandomDataService],
             selector: 'ng-banner',
-            template: "        <h2>{{title}}</h2>\n    "
+            template: "      \n             <h2>Status: {{title}}</h2>\n             <h3>Data: {{resultData}}</h3>\n             <h4>Count: {{totalCount}}</h4>\n            \n    "
         }), 
-        __metadata('design:paramtypes', [randomData_service_1.RandomData])
+        __metadata('design:paramtypes', [randomData_service_1.RandomDataService])
     ], Banner);
     return Banner;
 }());
